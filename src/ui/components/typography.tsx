@@ -2,7 +2,7 @@ import { Text, type TextProps } from 'react-native';
 import { StyleSheet } from 'react-native-unistyles';
 
 type TypographyProps = TextProps & {
-  variant?: 'title' | 'heading' | 'subheading' | 'body' | 'label' | 'caption' | 'number';
+  variant?: 'display' | 'title' | 'heading' | 'subheading' | 'body' | 'label' | 'caption' | 'number';
   tone?: 'primary' | 'muted' | 'accent' | 'danger';
 };
 
@@ -16,6 +16,7 @@ const styles = StyleSheet.create((theme) => ({
   text: {
     variants: {
       variant: {
+        display: theme.typography.display,
         title: theme.typography.title,
         heading: theme.typography.heading,
         subheading: theme.typography.subheading,

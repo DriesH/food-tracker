@@ -29,6 +29,7 @@ const fonts = {
 } as const;
 
 const typography = {
+  display: { fontFamily: fonts.monoMedium, fontSize: 44, lineHeight: 52 },
   title: { fontFamily: fonts.bold, fontSize: 34, lineHeight: 41 },
   heading: { fontFamily: fonts.semiBold, fontSize: 22, lineHeight: 28 },
   subheading: { fontFamily: fonts.semiBold, fontSize: 17, lineHeight: 22 },
@@ -49,6 +50,7 @@ export const lightTheme = {
     textMuted: '#6B6B70',
     border: '#E4E4E7',
     accent: '#16A34A',
+    onAccent: '#FFFFFF',
     danger: '#DC2626',
     kcal: '#F97316',
     protein: '#3B82F6',
@@ -66,6 +68,7 @@ export const darkTheme = {
     textMuted: '#A1A1AA',
     border: '#2C2C2E',
     accent: '#22C55E',
+    onAccent: '#052E16',
     danger: '#EF4444',
     kcal: '#FB923C',
     protein: '#60A5FA',

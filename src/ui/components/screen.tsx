@@ -1,16 +1,15 @@
-import type { ReactNode } from 'react';
-import { ScrollView } from 'react-native';
+import { ScrollView, type ScrollViewProps } from 'react-native';
 import { StyleSheet } from 'react-native-unistyles';
 
-export function Screen({ children }: { children: ReactNode }) {
+export function Screen(props: ScrollViewProps) {
   return (
     <ScrollView
       contentInsetAdjustmentBehavior="automatic"
+      keyboardShouldPersistTaps="handled"
+      {...props}
       style={styles.container}
       contentContainerStyle={styles.content}
-    >
-      {children}
-    </ScrollView>
+    />
   );
 }
 
