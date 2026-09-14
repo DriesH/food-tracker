@@ -12,6 +12,7 @@ export default function SettingsLayout() {
   return (
     <Stack screenOptions={screenOptions}>
       <Stack.Screen name="index" options={{ title: 'Settings' }} />
+      <Stack.Screen name="daily-goal" options={{ title: 'Daily Goal', headerLargeTitle: false }} />
     </Stack>
   );
 }
