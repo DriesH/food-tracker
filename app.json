@@ -1,0 +1,60 @@
+{
+  "expo": {
+    "name": "Food Tracker",
+    "slug": "food-tracker",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/images/icon.png",
+    "scheme": "foodtracker",
+    "userInterfaceStyle": "automatic",
+    "platforms": ["ios"],
+    "ios": {
+      "icon": "./assets/expo.icon",
+      "bundleIdentifier": "com.driesheyninck.foodtracker",
+      "appleTeamId": "P2DG27TUTZ",
+      "supportsTablet": false,
+      "infoPlist": {
+        "NSCameraUsageDescription": "Food Tracker uses the camera to scan barcodes and nutrition labels."
+      }
+    },
+    "plugins": [
+      "expo-router",
+      [
+        "expo-splash-screen",
+        {
+          "backgroundColor": "#208AEF",
+          "image": "./assets/images/splash-icon.png",
+          "imageWidth": 76
+        }
+      ],
+      "expo-sqlite",
+      "expo-sharing",
+      "react-native-edge-to-edge",
+      [
+        "expo-build-properties",
+        {
+          "ios": {
+            "deploymentTarget": "26.0"
+          }
+        }
+      ],
+      [
+        "expo-font",
+        {
+          "fonts": [
+            "node_modules/@expo-google-fonts/geist/400Regular/Geist_400Regular.ttf",
+            "node_modules/@expo-google-fonts/geist/500Medium/Geist_500Medium.ttf",
+            "node_modules/@expo-google-fonts/geist/600SemiBold/Geist_600SemiBold.ttf",
+            "node_modules/@expo-google-fonts/geist/700Bold/Geist_700Bold.ttf",
+            "node_modules/@expo-google-fonts/geist-mono/400Regular/GeistMono_400Regular.ttf",
+            "node_modules/@expo-google-fonts/geist-mono/500Medium/GeistMono_500Medium.ttf"
+          ]
+        }
+      ]
+    ],
+    "experiments": {
+      "typedRoutes": true,
+      "reactCompiler": true
+    }
+  }
+}
