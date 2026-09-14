@@ -135,6 +135,7 @@ Each phase ends with something running on the phone.
 - **Drizzle:** `.sql` migrations need Babel (`inline-import`) and Metro (`sql` extension) config.
 - **Unistyles 3.3.0:** open iOS crash bug #1243. Check whether it's fixed before release.
 - **`pod install` on macOS 27:** the Command Line Tools 27 SDK breaks Xcode 26's linker. Run `SDKROOT=$(xcrun --sdk macosx --show-sdk-path) pod install` in `ios/`.
+- **TypeScript 6:** `types` defaults to `[]`, so global test types must be listed in `tsconfig.json` (`"types": ["jest"]`).
 - **Typography tones:** Unistyles treats a variant named `default` as the fallback, so don't use `default` as a variant value.
 
 ## Verify during implementation
