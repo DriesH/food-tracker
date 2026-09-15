@@ -132,6 +132,7 @@ Each phase ends with something running on the phone.
 - **VisionCamera guides:** v4 guides show a config plugin that v5 doesn't have.
 - **OCR on simulator:** `ocr-plus` has no arm64 simulator build. Test Label Photos on the device.
 - **Native tabs:** alpha API. Each tab needs its own `Stack` for headers.
+- **Native tabs insets:** on iOS, the tab forces automatic content insets on the first scroll view. When that is a horizontal pager, set `disableAutomaticContentInsets` on the trigger, or pages jump after they snap.
 - **Drizzle:** `.sql` migrations need Babel (`inline-import`) and Metro (`sql` extension) config.
 - **Unistyles 3.3.0:** open iOS crash bug #1243. Check whether it's fixed before release.
 - **`pod install` on macOS 27:** the Command Line Tools 27 SDK breaks Xcode 26's linker. Run `SDKROOT=$(xcrun --sdk macosx --show-sdk-path) pod install` in `ios/`.

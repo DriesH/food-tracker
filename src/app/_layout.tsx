@@ -3,6 +3,7 @@ import { useMigrations } from 'drizzle-orm/expo-sqlite/migrator';
 import { NativeTabs } from 'expo-router/unstable-native-tabs';
 import * as SplashScreen from 'expo-splash-screen';
 import { useEffect } from 'react';
+import { GestureHandlerRootView } from 'react-native-gesture-handler';
 
 import { db } from '@/db/client';
 import migrations from '@/db/migrations/migrations';
@@ -35,23 +36,26 @@ export default function RootLayout() {
   }
 
   return (
-    <QueryClientProvider client={queryClient}>
-      <NativeTabs minimizeBehavior="onScrollDown">
-        <NativeTabs.Trigger name="(today)">
-          <NativeTabs.Trigger.Label>Today</NativeTabs.Trigger.Label>
-          <NativeTabs.Trigger.Icon sf="sun.max" />
-        </NativeTabs.Trigger>
+    <GestureHandlerRootView style={{ flex: 1 }}>
+      <QueryClientProvider client={queryClient}>
+        <NativeTabs minimizeBehavior="onScrollDown">
+          {/* The day pager is the first scroll view, so each day page handles its own insets. */}
+          <NativeTabs.Trigger name="(today)" disableAutomaticContentInsets>
+            <NativeTabs.Trigger.Label>Today</NativeTabs.Trigger.Label>
+            <NativeTabs.Trigger.Icon sf="sun.max" />
+          </NativeTabs.Trigger>
 
-        <NativeTabs.Trigger name="(products)">
-          <NativeTabs.Trigger.Label>Products</NativeTabs.Trigger.Label>
-          <NativeTabs.Trigger.Icon sf="cart" />
-        </NativeTabs.Trigger>
+          <NativeTabs.Trigger name="(products)">
+            <NativeTabs.Trigger.Label>Products</NativeTabs.Trigger.Label>
+            <NativeTabs.Trigger.Icon sf="cart" />
+          </NativeTabs.Trigger>
 
-        <NativeTabs.Trigger name="(settings)">
-          <NativeTabs.Trigger.Label>Settings</NativeTabs.Trigger.Label>
-          <NativeTabs.Trigger.Icon sf="gearshape" />
-        </NativeTabs.Trigger>
-      </NativeTabs>
-    </QueryClientProvider>
+          <NativeTabs.Trigger name="(settings)">
+            <NativeTabs.Trigger.Label>Settings</NativeTabs.Trigger.Label>
+            <NativeTabs.Trigger.Icon sf="gearshape" />
+          </NativeTabs.Trigger>
+        </NativeTabs>
+      </QueryClientProvider>
+    </GestureHandlerRootView>
   );
 }

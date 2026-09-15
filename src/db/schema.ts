@@ -93,6 +93,7 @@ export const dailyGoals = sqliteTable('daily_goals', {
   ...timestamps(),
 });
 
+export type Meal = (typeof meals)[number];
 export type Product = typeof products.$inferSelect;
 export type LogEntry = typeof logEntries.$inferSelect;
 export type DailyGoal = typeof dailyGoals.$inferSelect;
